@@ -10,7 +10,7 @@ const Tbody = ({ ques, cState }) => {
       currStatus: target.checked,
     };
     console.log(payload);
-    fetch(`${process.env.BACKEND_URL}api/status`, {
+    fetch(`https://leetcode-app-backend.herokuapp.com/api/status`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
