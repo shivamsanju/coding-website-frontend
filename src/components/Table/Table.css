@@ -1,0 +1,17 @@
+.con{
+    width: 96%;
+    margin-left:2%;
+    margin-top:10px;
+}
+
+td{
+    text-align: center;
+}
+
+tr:nth-child(even) {background: white}
+tr:nth-child(odd) {background: rgb(231, 228, 228)}
+tr:nth-child(1) {
+    background: #FED965;
+    font-weight: bold;
+    border-bottom:2px solid; 
+}
