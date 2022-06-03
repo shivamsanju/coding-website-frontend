@@ -5,7 +5,7 @@ import Tbody from "../Tbody/Tbody";
 const Table = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("https://shvm-leetcode-backend.herokuapp.com/api/questions")
+    fetch(`${process.env.BACKEND_URL}api/questions`)
       .then((response) => response.json())
       .then((json) => {
         setData(json.questions);
