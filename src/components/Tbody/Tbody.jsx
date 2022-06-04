@@ -12,6 +12,7 @@ const Tbody = ({ ques, cState }) => {
     console.log(payload);
     fetch(`https://leetcode-app-backend.herokuapp.com/api/status`, {
       method: "post",
+      credentials: 'include',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }).then(cState(payload));
