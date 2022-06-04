@@ -8,6 +8,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import PageNotFound from "./pages/PageNotFound";
 import React from "react";
 import Cookies from "universal-cookie";
@@ -31,6 +32,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginWrapper isLoggedIn={isLoggedIn} />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </BrowserRouter>

@@ -1,17 +1,34 @@
-import "./Navbar.css"
+import "./Navbar.css";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-
 const Navbar = () => {
+  const cookies = new Cookies();
+  const navigate = useNavigate();
+  const logoutHandler = () => {
+    cookies.remove("token");
+    navigate("/logout");
+  };
   return (
-    <div className='navbar'>
-        <span className='header'><img src={`${iconPath}logo.png`} alt="link" />Leetcode Problems</span>
-        <div className="social">
-        <a className='github' href='https://www.linkedin.com/in/shvmsnju'><img src={`${iconPath}linkedinicon.png`} alt="link" /></a>
-        <a className='github' href='https://github.com/shivamsanju'><img src={`${iconPath}githubicon.png`} alt="link" /></a>
-        </div>
+    <div className="navbar">
+      <span className="header">
+        <img src={`${iconPath}logo.png`} alt="link" />
+        Leetcode Problems
+      </span>
+      <div className="social">
+        <a className="github" href="https://www.linkedin.com/in/shvmsnju">
+          <img src={`${iconPath}linkedinicon.png`} alt="LinkedIn" />
+        </a>
+        <a className="github" href="https://github.com/shivamsanju">
+          <img src={`${iconPath}githubicon.png`} alt="GitHub" />
+        </a>
+        <button className="logout" onClick={logoutHandler}>
+          Logout <img src={`${iconPath}logout.png`} alt="logout" />
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

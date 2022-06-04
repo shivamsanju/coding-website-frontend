@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormGroup, FormLabel, FormControl, Button } from "react-bootstrap";
 import "./Login.css";
-import Cookies from "universal-cookie";
 
 export default function Login({ login }) {
-  const cookies = new Cookies();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

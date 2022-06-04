@@ -30,3 +30,11 @@
 .password{
     margin-top: 20px;
 }
+
+.logout{
+    border: none;
+    background:none;
+    margin: 0px 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
