@@ -1,0 +1,28 @@
+.container{
+    margin-top: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginHeader{
+    font-size: 5vw;
+    font-weight: 900;
+    color: #c59c23;
+    margin-bottom: 100px;
+}
+.Login{
+    padding: 50px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
+.password{
+    margin-top: 20px;
+}

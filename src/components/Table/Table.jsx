@@ -5,7 +5,10 @@ import Tbody from "../Tbody/Tbody";
 const Table = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://leetcode-app-backend.herokuapp.com/api/questions`)
+    fetch(`https://leetcode-app-backend.herokuapp.com/api/questions`,{
+      credentials: 'include',
+      method: 'GET'
+    })
       .then((response) => response.json())
       .then((json) => {
         console.log(json.questions);
