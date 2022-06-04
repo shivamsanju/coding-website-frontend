@@ -8,6 +8,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 import React from "react";
 import Cookies from "universal-cookie";
 
@@ -16,8 +17,9 @@ function App() {
   const token = cookies.get("token");
   const [isLoggedIn, setLoggedIn] = useState(token);
   console.log("render");
-  const CustomWrapper = ({ isLoggedIn }) => {
-    return isLoggedIn ? <Homepage /> : <Navigate to={`/`} />;
+
+  const LoginWrapper = ({ isLoggedIn }) => {
+    return isLoggedIn ? <Homepage /> : <Login login={login}/>;
   };
 
   const login = (token) => {
@@ -28,8 +30,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login login={login}/>} />
-        <Route path="questions" element={<CustomWrapper isLoggedIn={isLoggedIn} />} />
+        <Route path="/" element={<LoginWrapper isLoggedIn={isLoggedIn} />} />
+        <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </BrowserRouter>
   );

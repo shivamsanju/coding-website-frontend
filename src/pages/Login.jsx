@@ -28,7 +28,7 @@ export default function Login({ login }) {
       .then((json) => {
         if (json.success === true) {
           login(json.token);
-          navigate("questions");
+          navigate("/");
         } else {
           alert("Invalid Credentials");
           setUsername("");
