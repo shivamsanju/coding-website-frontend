@@ -1,8 +1,12 @@
 import React from "react";
 import "./Tbody.css";
+import Cookies from "universal-cookie";
+
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
 const Tbody = ({ ques, cState }) => {
+  const cookies = new Cookies();
+  const token = cookies.get("token");
   const checkboxHandler = (checkbox) => {
     const target = checkbox.currentTarget;
     const payload = {
@@ -13,7 +17,7 @@ const Tbody = ({ ques, cState }) => {
     fetch(`https://leetcode-app-backend.herokuapp.com/api/status`, {
       method: "post",
       credentials: 'include',
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "token": token },
       body: JSON.stringify(payload),
     }).then(cState(payload));
   };

@@ -7,7 +7,7 @@ const Homepage = () => {
   return (
     <div className="home">
       <Navbar/>
-      <Table/>
+      <Table />
     </div>
   )
 }
