@@ -38,6 +38,7 @@ const Tbody = ({ ques, cState }) => {
       <td><span className={ques.difficulty.toLowerCase()}>{ques.difficulty}</span></td>
       <td className="qcomp">{ques.companies.map((company)=>{return (<img
                     key={company}
+                    title={company}
                     src={`${iconPath}${company}.png`}
                     alt={company}
                     data-tip={company}
