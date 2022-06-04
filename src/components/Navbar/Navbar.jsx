@@ -3,7 +3,7 @@ import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-const Navbar = () => {
+const Navbar = ({done}) => {
   const cookies = new Cookies();
   const navigate = useNavigate();
   const logoutHandler = () => {
@@ -11,21 +11,32 @@ const Navbar = () => {
     navigate("/logout");
   };
   return (
-    <div className="navbar">
-      <span className="header">
-        <img src={`${iconPath}logo.png`} alt="link" />
-        Leetcode Problems
-      </span>
-      <div className="social">
-        <a className="github" href="https://www.linkedin.com/in/shvmsnju">
-          <img src={`${iconPath}linkedinicon.png`} alt="LinkedIn" />
-        </a>
-        <a className="github" href="https://github.com/shivamsanju">
-          <img src={`${iconPath}githubicon.png`} alt="GitHub" />
-        </a>
-        <button className="logout" onClick={logoutHandler}>
-          Logout <img src={`${iconPath}logout.png`} alt="logout" />
-        </button>
+    <div className="nav-container">
+      <div className="navbar">
+        <span className="header">
+          <img src={`${iconPath}logo.png`} alt="link" />
+          Leetcode Problems
+        </span>
+        <div className="social">
+          <a className="linkd" href="https://www.linkedin.com/in/shvmsnju">
+            <img src={`${iconPath}linkedinicon.png`} alt="LinkedIn" />
+          </a>
+          <a className="github" href="https://github.com/shivamsanju">
+            <img src={`${iconPath}githubicon.png`} alt="GitHub" />
+          </a>
+          <button className="logout" onClick={logoutHandler}>
+            Logout <img src={`${iconPath}logout.png`} alt="logout" />
+          </button>
+        </div>
+      </div>
+      <div>
+        <span className="progress-text">You have completed {done} out of 171 questions</span>
+        <progress
+          className="progress-bar"
+          id="file"
+          value={done}
+          max="171"
+        ></progress>
       </div>
     </div>
   );

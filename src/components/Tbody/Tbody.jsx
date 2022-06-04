@@ -36,7 +36,7 @@ const Tbody = ({ ques, cState }) => {
       </td>
       <td className="qname">{ques.name}</td>
       <td className="qlink">
-        <a href={ques.url}><img src={`${iconPath}link.png`} alt="link" /></a>
+        <a href={ques.url} target="_blank"><img src={`${iconPath}link.png`} alt="link" /></a>
       </td>
       <td className="qpatterns">{ques.pattern.map((pattern)=>{return <span className="pattern">{pattern}</span>})}</td>
       <td><span className={ques.difficulty.toLowerCase()}>{ques.difficulty}</span></td>

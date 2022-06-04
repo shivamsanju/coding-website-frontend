@@ -1,9 +1,48 @@
+.nav-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    margin: 0px;
+    overflow: hidden;
+    /* border: 2px solid #c4c1bd; */
+}
+.progress-text{
+    display: inline-block;
+    position:absolute;
+    color:#0f370d;
+    font-size:20px;
+    font-weight: 700;
+    margin-left: 35vw;
+}
+
+progress::-moz-progress-bar { 
+    background:#c4c1bd; 
+}
+
+progress::-moz-progress-value { 
+    background: #e6b420; 
+}
+
+progress::-webkit-progress-bar { 
+    background:#c9c8c5; 
+}
+
+progress::-webkit-progress-value { 
+    background:#18b010; 
+}
+
 .navbar{
     display: flex;
     background-color: #F8F9FA;
     justify-content: space-between;
     align-items: center;
 }
+
 
 .header{
     display: flex;
@@ -17,8 +56,9 @@
 .social{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
-.social img{
-    margin-right: 50px;
+.github, .linkd img{
+    margin: 0px 50px;
 }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tbody from "../Tbody/Tbody";
 import Cookies from "universal-cookie";
 
-const Table = () => {
+const Table = ({progress}) => {
   const cookies = new Cookies();
   const token = cookies.get("token");
   const [data, setData] = useState([]);
@@ -18,6 +18,7 @@ const Table = () => {
       .then((json) => {
         if (json.questions){
           setData(json.questions);
+          progress(json.questions);
         }
       });
   }, []);
@@ -32,6 +33,7 @@ const Table = () => {
       }
     });
     setData([...data]);
+    progress([...data]);
   };
   return (
     <div className="con">
