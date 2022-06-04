@@ -1,50 +1,54 @@
-.qcomp img{
-    margin: 5px;
+.qcomp img {
+  margin: 5px;
 }
 
-.qcomp{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.qcomp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.qname{
+.qname {
   font-weight: 500;
 }
 
 .easy {
-    background-color: #5cb85c;
-    border-radius: 50px;
-    padding:5px;
-    font-size: 11px;
-    font-weight:bold;
-  }
-
-.medium {
-    background-color: #f0ad4e;
-    border-radius: 50px;
-    padding:5px;
-    font-size: 11px;
-    font-weight:bold;
-  }
-
-.hard {
-    background-color: #d9534f;
-    border-radius: 50px;
-    padding:5px;
-    font-size: 11px;
-    font-weight:bold;
-  }
-
-.qid{
-    width:50px;
+  background-color: #5cb85c;
+  border-radius: 50px;
+  padding: 1px 7px 4px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  color:rgb(50, 55, 40);
 }
 
-.pattern{
+.medium {
+  background-color: #f0ad4e;
+  border-radius: 50px;
+  padding: 1px 7px 4px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  color:rgb(63, 59, 40);
+}
+
+.hard {
+  background-color: #d9534f;
+  border-radius: 50px;
+  padding: 1px 7px 4px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  color:rgb(255, 223, 217);
+}
+
+.qid {
+  width: 50px;
+}
+
+.pattern {
   background-color: #b9b1b1;
   border-radius: 50px;
-  padding:4px;
+  padding: 1px 7px 4px 7px;
   font-size: 11px;
-  font-weight:bold;
+  font-weight: bold;
   margin: 3px;
+  color: rgb(56, 55, 55);
 }

@@ -19,7 +19,7 @@ const Tbody = ({ ques, cState }) => {
   };
 
   return (
-    <tr>
+    <tr className={ques.done ? "done" : null}>
       <td className="qid">
         <input
           type="checkbox"
