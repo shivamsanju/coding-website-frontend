@@ -17,6 +17,7 @@ const Table = ({progress}) => {
       .then((response) => response.json())
       .then((json) => {
         if (json.questions){
+          console.log("questions --> ",json.questions)
           setData(json.questions);
           progress(json.questions);
         }
@@ -41,11 +42,13 @@ const Table = ({progress}) => {
         <tbody>
           <tr>
             <td>Status</td>
+            <td>Id</td>
             <td>Name</td>
             <td>Link</td>
             <td>Pattern</td>
             <td>Difficulty</td>
             <td>Companies</td>
+            <td>Hint</td>
           </tr>
           {data.map((ques) => {
             return <Tbody key={ques.id} ques={ques} cState={checkBoxState} />;

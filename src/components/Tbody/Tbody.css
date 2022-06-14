@@ -10,7 +10,14 @@
 
 .qname {
   font-weight: 500;
+  font-size: 14px;
 }
+
+.quesId{
+  font-size: 12px;
+  font-weight: bold;
+}
+
 
 .easy {
   background-color: #5cb85c;
@@ -51,4 +58,30 @@
   font-weight: bold;
   margin: 3px;
   color: rgb(56, 55, 55);
+}
+
+.qhint{
+  cursor: pointer;
+}
+
+.qhint .tooltip-text {
+  /* visibility: hidden; */
+  display: none;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  right: 50px;
+  z-index: 1;
+}
+
+.qhint:hover .tooltip-text {
+  /* visibility: visible; */
+  display: block;
 }
