@@ -73,3 +73,8 @@
 .addQuestions img{
     margin-top: 10px;
 }
+
+.cancel{
+    background-color: red !important;
+    margin-left: 10px
+}

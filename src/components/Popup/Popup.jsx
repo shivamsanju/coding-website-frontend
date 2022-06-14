@@ -22,6 +22,10 @@ const Popup = ({ render }) => {
     setNotes(event.target.value);
   };
 
+  const cancelHandler = () => {
+    openPopup(true);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const payload = {
@@ -85,6 +89,9 @@ const Popup = ({ render }) => {
           />
         </div>
         <button type='submit'>Add</button>
+        <button className='cancel' onClick={cancelHandler}>
+          Cancel
+        </button>
       </form>
     </div>
   );

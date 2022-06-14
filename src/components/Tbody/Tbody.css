@@ -67,7 +67,7 @@
 .qhint .tooltip-text {
   /* visibility: hidden; */
   display: none;
-  width: 150px;
+  max-width: 150px;
   background-color: black;
   color: #fff;
   font-size: 10px;
@@ -84,4 +84,5 @@
 .qhint:hover .tooltip-text {
   /* visibility: visible; */
   display: block;
+  margin: 5px;
 }
