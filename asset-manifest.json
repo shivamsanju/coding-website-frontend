@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dsa-webapp-frontend/static/css/main.490e3fb0.css",
+    "main.js": "/dsa-webapp-frontend/static/js/main.a9b51915.js",
+    "index.html": "/dsa-webapp-frontend/index.html",
+    "main.490e3fb0.css.map": "/dsa-webapp-frontend/static/css/main.490e3fb0.css.map",
+    "main.a9b51915.js.map": "/dsa-webapp-frontend/static/js/main.a9b51915.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.490e3fb0.css",
+    "static/js/main.a9b51915.js"
+  ]
+}
