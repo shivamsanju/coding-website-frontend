@@ -9,7 +9,7 @@
     transition: all ease 0.3s;
     position: fixed;
     top: 150px;
-    left: 20px;
+    right: 20px;
     padding: 10px;
 }
 
@@ -51,8 +51,8 @@
     justify-content: center;
     transition: all ease 0.3s;
     position: fixed;
-    top: 150px;
-    left: 20px;
+    top: 300px;
+    right: 20px;
 }
 
 .addQuestions{

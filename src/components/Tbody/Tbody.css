@@ -60,29 +60,6 @@
   color: rgb(56, 55, 55);
 }
 
-.qhint{
+.qhint img{
   cursor: pointer;
-}
-
-.qhint .tooltip-text {
-  /* visibility: hidden; */
-  display: none;
-  max-width: 150px;
-  background-color: black;
-  color: #fff;
-  font-size: 10px;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  right: 50px;
-  z-index: 1;
-}
-
-.qhint:hover .tooltip-text {
-  /* visibility: visible; */
-  display: block;
-  margin: 5px;
 }

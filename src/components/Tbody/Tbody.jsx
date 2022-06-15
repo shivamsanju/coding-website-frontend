@@ -41,6 +41,9 @@ const Tbody = ({ ques, cState }) => {
           <img src={`${iconPath}link.png`} alt='link' />
         </a>
       </td>
+      <td className='qhint'>
+        <img title={ques.notes} src={`${iconPath}note.png`} alt='link' />
+      </td>
       <td className='qpatterns'>
         {ques.pattern.map((pattern) => {
           return <span className='pattern'>{pattern}</span>;
@@ -61,16 +64,6 @@ const Tbody = ({ ques, cState }) => {
             />
           );
         })}
-      </td>
-      <td className='qhint'>
-        <img
-          src={`${iconPath}ibutton.png`}
-          height={18}
-          width={18}
-          alt='link'
-          data-tip={ques.notes}
-        />
-        <p className='tooltip-text'>{ques.notes}</p>
       </td>
     </tr>
   );
