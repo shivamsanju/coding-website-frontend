@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dsa-webapp-frontend/static/css/main.490e3fb0.css",
-    "main.js": "/dsa-webapp-frontend/static/js/main.a9b51915.js",
-    "index.html": "/dsa-webapp-frontend/index.html",
-    "main.490e3fb0.css.map": "/dsa-webapp-frontend/static/css/main.490e3fb0.css.map",
-    "main.a9b51915.js.map": "/dsa-webapp-frontend/static/js/main.a9b51915.js.map"
+    "main.css": "/static/css/main.fda9682b.css",
+    "main.js": "/static/js/main.a187717e.js",
+    "index.html": "/index.html",
+    "main.fda9682b.css.map": "/static/css/main.fda9682b.css.map",
+    "main.a187717e.js.map": "/static/js/main.a187717e.js.map"
   },
   "entrypoints": [
-    "static/css/main.490e3fb0.css",
-    "static/js/main.a9b51915.js"
+    "static/css/main.fda9682b.css",
+    "static/js/main.a187717e.js"
   ]
 }
