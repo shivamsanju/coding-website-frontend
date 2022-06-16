@@ -1,4 +1,19 @@
 .logout> h4{
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 500;
+}
+
+.logout > a{
+    text-decoration: none;
+    font-weight: 600;
+    color: blue;
+    font-size: 35px;
+}
+
+.logout{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
