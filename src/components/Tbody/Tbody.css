@@ -8,9 +8,17 @@
   justify-content: center;
 }
 
-.qname {
+.qname > a {
   font-weight: 500;
   font-size: 14px;
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s ease;
+}
+
+.qname > a:hover {
+  font-weight: 700;
+  color: rgb(22, 22, 22)
 }
 
 .quesId{

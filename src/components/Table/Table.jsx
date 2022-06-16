@@ -42,9 +42,7 @@ const Table = ({ progress }) => {
         <tbody>
           <tr>
             <td>Status</td>
-            <td>Id</td>
             <td>Name</td>
-            <td>Link</td>
             <td>Notes</td>
             <td>Pattern</td>
             <td>Difficulty</td>

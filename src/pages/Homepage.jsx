@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Table from '../components/Table/Table';
 import { useState } from 'react';
-import Popup from '../components/Popup/Popup';
+// import Popup from '../components/Popup/Popup';
 
 const Homepage = () => {
   console.log('Homepage');
-  const [rendervar, rerender] = useState(0);
-  const forceRender = () => {
-    rerender(!rendervar);
-  };
+  // const [rendervar, rerender] = useState(0);
+  // const forceRender = () => {
+  //   rerender(!rendervar);
+  // };
   const [doneQ, setDoneQ] = useState(0);
   const progress = (data) => {
     let total = 0;
@@ -26,7 +26,7 @@ const Homepage = () => {
   return (
     <div className='home'>
       <Navbar done={doneQ} />
-      <Popup render={forceRender} />
+      {/* <Popup render={forceRender} /> */}
       <Table progress={progress} />
     </div>
   );
