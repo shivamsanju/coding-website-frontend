@@ -8,7 +8,6 @@ const Table = ({ progress }) => {
   const token = cookies.get('token');
   const [data, setData] = useState([]);
   useEffect(() => {
-    console.log(token);
     fetch(`https://leetcode-app-backend.herokuapp.com/api/questions`, {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', token: token },
