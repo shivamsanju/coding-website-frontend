@@ -19,13 +19,22 @@ const Navbar = ({ done }) => {
         </span>
         <div className='social'>
           <a className='linkd' href='https://www.linkedin.com/in/shvmsnju'>
-            <img src={`${iconPath}linkedinicon.png`} alt='LinkedIn' />
+            <img
+              src={`${iconPath}linkedinicon.png`}
+              alt='LinkedIn'
+              height={35}
+            />
           </a>
           <a className='github' href='https://github.com/shivamsanju'>
-            <img src={`${iconPath}githubicon.png`} alt='GitHub' />
+            <img src={`${iconPath}githubicon.png`} alt='GitHub' height={35} />
           </a>
           <button className='logout' onClick={logoutHandler}>
-            Logout <img src={`${iconPath}logout.png`} alt='logout' />
+            <img
+              title='logout'
+              src={`${iconPath}logout.png`}
+              alt='logout'
+              height={35}
+            />
           </button>
         </div>
       </div>

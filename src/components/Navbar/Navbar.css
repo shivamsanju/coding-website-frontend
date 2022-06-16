@@ -60,5 +60,9 @@ progress::-webkit-progress-value {
 }
 
 .github, .linkd img{
-    margin: 0px 50px;
+    margin: 0px 5px;
+}
+
+.logout img{
+    margin: 0px 30px;
 }
