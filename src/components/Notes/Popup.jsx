@@ -50,7 +50,7 @@ const Popup = ({ qId, note, popupToggle }) => {
             title={qId}
             frameborder='0'
             width='100%'
-            height='90%'
+            height='94%'
             src='https://replit.com/@ritza/demo-embed?lite=true'
           >
             {notes}

@@ -54,7 +54,8 @@ const Tbody = ({ ques, cState }) => {
         <td className='qhint'>
           <img
             title={ques.notes}
-            src={`${iconPath}note.png`}
+            src={`${iconPath}notes.png`}
+            height={18}
             alt='link'
             onClick={() => {
               openNotes(ques.id, ques.notes);
@@ -80,6 +81,7 @@ const Tbody = ({ ques, cState }) => {
                 src={`${iconPath}${company}.png`}
                 alt={company}
                 data-tip={company}
+                width={18}
               />
             );
           })}

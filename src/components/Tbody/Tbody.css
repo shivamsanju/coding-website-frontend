@@ -1,5 +1,5 @@
 .qcomp img {
-  margin: 5px;
+  margin: 7px;
 }
 
 .qcomp {
@@ -9,49 +9,60 @@
 }
 
 .qname > a {
-  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: rgb(63, 63, 63);
   transition: all 0.2s ease;
 }
 
 .qname > a:hover {
   font-weight: 700;
-  color: rgb(22, 22, 22)
+  color: black;
 }
 
 .quesId{
   font-size: 12px;
-  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 700;
 }
 
 
 .easy {
-  background-color: #5cb85c;
+  background-color: #084d08;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-radius: 50px;
   padding: 1px 7px 4px 7px;
   font-size: 11px;
-  font-weight: bold;
-  color:rgb(50, 55, 40);
+  font-weight: 700;
+  color:#f8f9fa;
+  /* box-shadow: 0px 1px 1px 0px #ccc; */
+
 }
 
 .medium {
   background-color: #f0ad4e;
   border-radius: 50px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 1px 7px 4px 7px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   color:rgb(63, 59, 40);
+  /* box-shadow: 0px 1px 1px 0px #ccc; */
+
 }
 
 .hard {
   background-color: #d9534f;
   border-radius: 50px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 1px 7px 4px 7px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   color:rgb(255, 223, 217);
+  /* box-shadow: 0px 1px 1px 0px #ccc; */
+
 }
 
 .qid {
@@ -59,13 +70,15 @@
 }
 
 .pattern {
-  background-color: #b9b1b1;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(224, 249, 252);
   border-radius: 50px;
   padding: 1px 7px 4px 7px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 3px;
-  color: rgb(56, 55, 55);
+  color: rgb(63, 63, 63);
+  /* box-shadow: 0px 1px 1px 0px #ccc; */
 }
 
 .qhint img{

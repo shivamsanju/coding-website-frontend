@@ -28,23 +28,25 @@ const LBoard = ({ popupToggle }) => {
   return (
     <div className='leaderboard'>
       <div>
-        <span>Problems Solved </span>
-        <button onClick={cancelHandler}>X</button>
+        Problems Solved{' '}
+        <button type='text' onClick={cancelHandler}>
+          X
+        </button>
       </div>
-      {leaderData ? (
-        leaderData.map((user) => {
-          return (
-            <table className='userCard'>
+      <table className='userCard'>
+        {leaderData ? (
+          leaderData.map((user) => {
+            return (
               <tr>
                 <td>{user.username}</td>
-                <td>{user.done} / 171</td>
+                <td>{user.done}</td>
               </tr>
-            </table>
-          );
-        })
-      ) : (
-        <></>
-      )}
+            );
+          })
+        ) : (
+          <></>
+        )}
+      </table>
     </div>
   );
 };

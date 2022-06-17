@@ -20,39 +20,6 @@ const Navbar = ({ done }) => {
     <>
       {isPopupOpen && <LBoard popupToggle={openPopup} />}
       <div className='nav-container'>
-        <div className='navbar'>
-          <span className='header'>
-            <img src={`${iconPath}logo.png`} alt='link' />
-            Leetcode Problems
-          </span>
-          <div className='social'>
-            <button onClick={popupHandler}>
-              <img
-                src={`${iconPath}leaderboard.png`}
-                alt='GitHub'
-                height={35}
-              />
-            </button>
-            <a className='linkd' href='https://www.linkedin.com/in/shvmsnju'>
-              <img
-                src={`${iconPath}linkedinicon.png`}
-                alt='LinkedIn'
-                height={35}
-              />
-            </a>
-            <a className='github' href='https://github.com/shivamsanju'>
-              <img src={`${iconPath}githubicon.png`} alt='GitHub' height={35} />
-            </a>
-            <button className='logout' onClick={logoutHandler}>
-              <img
-                title='logout'
-                src={`${iconPath}logout.png`}
-                alt='logout'
-                height={35}
-              />
-            </button>
-          </div>
-        </div>
         <div>
           <span className='progress-text'>
             You have completed {done} out of 171 questions
@@ -63,6 +30,39 @@ const Navbar = ({ done }) => {
             value={done}
             max='171'
           ></progress>
+        </div>
+        <div className='navbar'>
+          <span className='header'>
+            <img src={`${iconPath}logo.png`} alt='link' height={25} />
+            Leetcode Problems
+          </span>
+          <div className='social'>
+            <button onClick={popupHandler}>
+              <img
+                src={`${iconPath}leaderboard.png`}
+                alt='GitHub'
+                height={25}
+              />
+            </button>
+            <a className='linkd' href='https://www.linkedin.com/in/shvmsnju'>
+              <img
+                src={`${iconPath}linkedinicon.png`}
+                alt='LinkedIn'
+                height={25}
+              />
+            </a>
+            <a className='github' href='https://github.com/shivamsanju'>
+              <img src={`${iconPath}githubicon.png`} alt='GitHub' height={25} />
+            </a>
+            <button className='logout' onClick={logoutHandler}>
+              <img
+                title='logout'
+                src={`${iconPath}logout.png`}
+                alt='logout'
+                height={25}
+              />
+            </button>
+          </div>
         </div>
       </div>
     </>
