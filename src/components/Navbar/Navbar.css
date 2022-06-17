@@ -28,6 +28,17 @@
     margin-left: 35vw;
 }
 
+@media screen and (max-width: 800px) {
+    .header, .progress-text{
+        visibility: hidden;
+    }
+
+    .header img{
+        visibility: visible !important;
+    }
+  }
+
+
 progress::-moz-progress-bar { 
     background:#f8f9fa;
 }
@@ -46,10 +57,10 @@ progress::-webkit-progress-value {
 
 .navbar{
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    margin: -10px;
     margin-top: 15px;
 }
 
@@ -60,7 +71,7 @@ progress::-webkit-progress-value {
     font-weight: 700;
     color: black;
     font-size: 20px;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 .social{

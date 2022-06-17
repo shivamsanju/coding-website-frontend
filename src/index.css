@@ -10,8 +10,6 @@ code {
   font-family: 'Source Code Pro' monospace;
 }
 
-html, body 
-{ 
- overflow-x: hidden;
- max-width: 100%;
+html{ 
+ max-width: 96%;
 }
