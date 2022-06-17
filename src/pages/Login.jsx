@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FormGroup, FormLabel, FormControl, Button } from "react-bootstrap";
-import "./Login.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
+import './Login.css';
 
 export default function Login({ login }) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   function performValidation() {
     return username.length > 0 && password.length > 0;
@@ -18,54 +18,52 @@ export default function Login({ login }) {
       password: password,
     };
     fetch(`https://leetcode-app-backend.herokuapp.com/api/login`, {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     })
       .then((response) => response.json())
       .then((json) => {
         if (json.success === true) {
           login(json.token);
-          navigate("/");
+          navigate('/');
         } else {
-          alert("Invalid Credentials");
-          setUsername("");
-          setPassword("");
+          alert('Invalid Credentials');
+          setUsername('');
+          setPassword('');
         }
       });
   }
   return (
-    <div className="container">
-      <h1 className="loginHeader">LEETCODE PROBLEMS LOGIN</h1>
-      <div className="Login">
+    <div className='container'>
+      <h1 className='loginHeader'>LEETCODE PROBLEMS LOGIN</h1>
+      <div className='Login'>
         <form onSubmit={handleSubmit}>
-          <FormGroup controlId="username" bsSize="large">
-            <FormLabel>
-              <b>Username</b>
-            </FormLabel>
+          <FormGroup className='username' controlId='username' bsSize='large'>
+            <FormLabel className='loginText'>Username</FormLabel>
             <FormControl
+              className='inputvalue'
               autoFocus
-              type="text"
+              type='text'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="password" controlId="password" bsSize="large">
-            <FormLabel>
-              <b>Password</b>
-            </FormLabel>
+          <FormGroup className='password' controlId='password' bsSize='large'>
+            <FormLabel className='loginText'>Password</FormLabel>
             <FormControl
+              className='inputvalue'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              type="password"
+              type='password'
             />
           </FormGroup>
           <Button
             block
-            bsSize="large"
+            bsSize='large'
             disabled={!performValidation()}
-            type="submit"
-            className="btn"
+            type='submit'
+            className='btn'
           >
             Login
           </Button>

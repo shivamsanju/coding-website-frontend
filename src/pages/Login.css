@@ -1,30 +1,50 @@
 .container{
-    margin-top: 100px;
+    margin-top: 10%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.loginHeader{
-    font-size: 4vw;
-    font-weight: 900;
-    color: #c59c23;
-    margin-bottom: 100px;
+.loginText{
+    font-family: 'Source Code Pro','Courier New', Courier, monospace;
+    font-weight: 700;
+    color: #55aea4;
 }
+
+.loginHeader{
+    font-size: 2vw;
+    font-family: 'Source Code Pro','Courier New', Courier, monospace;
+    font-weight: 900;
+    color: #55aea4;
+    margin-bottom: 10px;
+}
+
+.username, .password {
+    display: flex;
+}
+
 .Login{
-    padding: 50px;
-    border: 2pxpx solid rgb(97, 94, 94);
-    border-radius: 10px;
-    background-color: #e7e3db;
-    box-shadow:
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgb(255,255,255),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    padding: 20px;
 }
 
 .btn{
     margin-top: 20px;
+    background-color: #064f1a !important;
+    border: none !important;
+    width: 100%;
+}
+
+.inputvalue{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-left: 25px;
+}
+
+.inputvalue:focus{
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid #ccc;
 }
 
 .password{
