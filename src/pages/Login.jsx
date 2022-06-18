@@ -69,6 +69,8 @@ export default function Login({ login }) {
           </Button>
         </form>
       </div>
+      <h1 className='logininfo'>Username: demo</h1>
+      <h1 className='logininfo'>Password: pass123</h1>
     </div>
   );
 }

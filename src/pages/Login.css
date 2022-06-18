@@ -12,6 +12,13 @@
     color: #55aea4;
 }
 
+.logininfo{
+    font-family: 'Source Code Pro','Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 15px;
+    color: #55aea4;
+}
+
 .loginHeader{
     font-size: 2vw;
     font-family: 'Source Code Pro','Courier New', Courier, monospace;
