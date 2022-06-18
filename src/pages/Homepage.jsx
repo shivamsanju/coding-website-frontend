@@ -46,7 +46,7 @@ const Homepage = () => {
           Notes
         </button>
         <button type='text' id='links' onClick={() => setTab('links')}>
-          Important Links
+          Links
         </button>
       </div>
     );
