@@ -21,6 +21,7 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    popupToggle(false);
     const payload = {
       id: qId,
       noteData: notes,
@@ -32,7 +33,6 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
       headers: { 'Content-Type': 'application/json', token: token },
       body: JSON.stringify(payload),
     });
-    popupToggle(false);
     renderNote(qId, notes);
     console.log('successfull');
   };
