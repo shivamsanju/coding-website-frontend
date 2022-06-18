@@ -5,7 +5,7 @@ import Popup from '../Notes/Popup';
 
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-const Tbody = ({ ques, cState }) => {
+const Tbody = ({ ques, cState, renderNote }) => {
   const [qId, setQId] = useState();
   const [note, setNote] = useState();
   const [isPopupOpen, openPopup] = useState(false);
@@ -34,7 +34,15 @@ const Tbody = ({ ques, cState }) => {
 
   return (
     <div className={ques.done ? 'done table-row' : 'table-row'}>
-      {isPopupOpen && <Popup qId={qId} note={note} popupToggle={openPopup} />}
+      {isPopupOpen && (
+        <Popup
+          key={qId}
+          qId={qId}
+          note={note}
+          popupToggle={openPopup}
+          renderNote={renderNote}
+        />
+      )}
       <div className='qid'>
         <input
           type='checkbox'

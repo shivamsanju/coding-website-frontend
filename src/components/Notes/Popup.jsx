@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Popup.css';
 import Cookies from 'universal-cookie';
 
-const Popup = ({ qId, note, popupToggle }) => {
+const Popup = ({ qId, note, popupToggle, renderNote }) => {
   console.log(qId, note);
   const cookies = new Cookies();
   const token = cookies.get('token');
@@ -33,7 +33,7 @@ const Popup = ({ qId, note, popupToggle }) => {
       body: JSON.stringify(payload),
     });
     popupToggle(false);
-    window.location.reload();
+    renderNote(qId, notes);
     console.log('successfull');
   };
 

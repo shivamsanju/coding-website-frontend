@@ -38,6 +38,18 @@ const Table = ({ progress }) => {
     setData([...data]);
     progress([...data]);
   };
+
+  const renderNote = (qId, note) => {
+    console.log(qId, note);
+    const newData = data.map((object) => {
+      if (object.id === qId) {
+        return { ...object, notes: note };
+      }
+      return object;
+    });
+    setData([...newData]);
+  };
+
   console.log(isLoading);
   return (
     <div className='con'>
@@ -55,7 +67,14 @@ const Table = ({ progress }) => {
         </div>
       ) : (
         data.map((ques) => {
-          return <Tbody key={ques.id} ques={ques} cState={checkBoxState} />;
+          return (
+            <Tbody
+              key={ques.id}
+              ques={ques}
+              cState={checkBoxState}
+              renderNote={renderNote}
+            />
+          );
         })
       )}
     </div>
