@@ -37,13 +37,9 @@ const Navbar = ({ done }) => {
             Leetcode Problems
           </span>
           <div className='social'>
-            <button onClick={popupHandler}>
-              <img
-                src={`${iconPath}leaderboard.png`}
-                alt='GitHub'
-                height={25}
-              />
-            </button>
+            <a className='github' href='https://shvmsnju.vercel.app/'>
+              <img src={`${iconPath}personal.png`} alt='Website' height={25} />
+            </a>
             <a className='linkd' href='https://www.linkedin.com/in/shvmsnju'>
               <img
                 src={`${iconPath}linkedinicon.png`}
@@ -54,7 +50,14 @@ const Navbar = ({ done }) => {
             <a className='github' href='https://github.com/shivamsanju'>
               <img src={`${iconPath}githubicon.png`} alt='GitHub' height={25} />
             </a>
-            <button className='logout' onClick={logoutHandler}>
+            <button className='leaderboard-btn' onClick={popupHandler}>
+              <img
+                src={`${iconPath}leaderboard.png`}
+                alt='LeaderBoard'
+                height={25}
+              />
+            </button>
+            <button className='logoutbtn' onClick={logoutHandler}>
               <img
                 title='logout'
                 src={`${iconPath}logout.png`}

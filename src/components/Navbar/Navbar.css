@@ -78,12 +78,17 @@ progress::-webkit-progress-value {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 15px 0;
 }
 
 .github, .linkd img{
     margin: 0px 5px;
 }
 
-.logout img{
+.logoutbtn img{
     margin: 0 150px 0 0;
+}
+
+.leaderboard-btn img{
+    margin-left: 50px;
 }
