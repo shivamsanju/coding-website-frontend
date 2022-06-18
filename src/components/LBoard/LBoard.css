@@ -1,57 +1,71 @@
-.leaderboard{
-    display: flex;
-    flex-direction: column;
-    position:fixed;
-    top: 3em;
-    right: 8em;
-    padding: 3px;
-    z-index: 1000;
-    background-color: #f9f8fa;
-    box-shadow: rgba(17, 17, 18, 0.48) 1px 1px 5px 0px, rgba(5, 5, 5, 0.8) -1px -1px 5px 0px;
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 3em;
+  right: 13em;
+  padding: 3px;
+  z-index: 1000;
+  background-color: #f9f8fa;
+  box-shadow: rgba(17, 17, 18, 0.48) 1px 1px 5px 0px,
+    rgba(5, 5, 5, 0.8) -1px -1px 5px 0px;
 }
 
-.leaderboard-header{
-    display: grid;
-    grid-template-columns: 9fr 2fr;
+@media screen and (max-width: 800px) {
+  .leaderboard {
+    top: 6em !important;
+    right: 6em !important;
+  }
 }
 
-.userCard{
-    margin: 0px 5px !important;
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: 9fr 2fr;
 }
 
-.userCard> tr{
-    border: none;
-    background-color: #f9f8fa !important;
+.userCard {
+  margin: 0px 5px !important;
 }
 
-.userCard> tr> td{
-    color: rgb(70, 69, 69) !important;
-    font-size: 12px !important;
-    font-weight: 550 !important;
-    padding: 3px 10px !important;
-    text-align: center;
-    max-height: 20%;
+.userCard > tr {
+  border: none;
+  background-color: #f9f8fa !important;
 }
 
+.userCard > tr > td {
+  color: rgb(70, 69, 69) !important;
+  font-size: 12px !important;
+  font-weight: 550 !important;
+  padding: 3px 10px !important;
+  text-align: center;
+  max-height: 20%;
+}
 
 .leaderboard > div {
-    display: flex;
-    color: #55aea4 !important;
-    font-size: 0.8em;
-    font-weight: 700;
-    padding-left: 1em;
+  display: flex;
+  color: #55aea4 !important;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding-left: 1em;
 }
 
+.leaderboard > div > button {
+  color: white;
+  background-color: red !important;
+  border-radius: 50%;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 0 !important;
+  height: 1em;
+  width: 1em;
+  margin: 0.1em !important;
+  margin-left: 1em !important;
+}
 
-.leaderboard > div> button{
-    color: white;
-    background-color: red !important;
-    border-radius: 50%;
-    font-size: 0.8em;
-    font-weight: 700;
-    padding: 0 !important;
-    height: 1em;
-    width: 1em;
-    margin: 0.1em !important;
-    margin-left: 1em !important;
+.spinner-lb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f8fa !important;
+  padding: 10px;
 }

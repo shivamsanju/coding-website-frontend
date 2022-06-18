@@ -6,6 +6,13 @@
   padding: 0;
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40vh;
+  background-color: #ffffff !important;
+}
 
 .con > div:nth-child(even){
   background-color: #f8f9fa;
@@ -16,9 +23,7 @@
     margin: 0 !important;
   }
   .table-header > div{
-    width: 100%;
-    display: block !important;
-    text-overflow: ellipsis !important;
+    font-size: 0.6em !important;
     white-space: nowrap !important;
     overflow: hidden !important;
   }
@@ -30,7 +35,7 @@
   align-items: center;
   padding: 0.3em;
   background: #e7e8e9;
-  font-size: 0.75em !important;
+  font-size: 0.75em;
   font-weight: 900 !important;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

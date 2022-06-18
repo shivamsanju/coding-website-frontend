@@ -2,11 +2,14 @@ import './Table.css';
 import React, { useState, useEffect } from 'react';
 import Tbody from '../Tbody/Tbody';
 import Cookies from 'universal-cookie';
+import { SpinnerDotted } from 'spinners-react';
 
 const Table = ({ progress }) => {
   const cookies = new Cookies();
   const token = cookies.get('token');
   const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch(`https://leetcode-app-backend.herokuapp.com/api/questions`, {
       credentials: 'include',
@@ -19,6 +22,7 @@ const Table = ({ progress }) => {
           setData(json.questions);
           progress(json.questions);
         }
+        setLoading(false);
       });
   }, []);
 
@@ -34,6 +38,7 @@ const Table = ({ progress }) => {
     setData([...data]);
     progress([...data]);
   };
+  console.log(isLoading);
   return (
     <div className='con'>
       <div className='table-row table-header'>
@@ -44,9 +49,15 @@ const Table = ({ progress }) => {
         <div>Difficulty</div>
         <div>Companies</div>
       </div>
-      {data.map((ques) => {
-        return <Tbody key={ques.id} ques={ques} cState={checkBoxState} />;
-      })}
+      {isLoading ? (
+        <div className='spinner'>
+          <SpinnerDotted enabled={isLoading} />
+        </div>
+      ) : (
+        data.map((ques) => {
+          return <Tbody key={ques.id} ques={ques} cState={checkBoxState} />;
+        })
+      )}
     </div>
   );
 };

@@ -83,7 +83,8 @@ progress::-webkit-progress-value {
 
 
 .navbar > div > div >a,button {
-    margin: 0 0.5em;
+    margin: 0 5px;
+    padding: 0 !important;
 }
 
 .header{
