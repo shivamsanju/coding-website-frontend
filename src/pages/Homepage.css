@@ -29,6 +29,8 @@
 }
 
 .tabs > button:focus {
+  box-shadow: none;
+  border: none;
   color: white;
   background-color: rgb(49, 48, 48);
   font-size: 0.85em;

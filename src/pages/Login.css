@@ -1,66 +1,68 @@
-.container{
-    margin-top: 10%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.loginText{
-    font-family: 'Source Code Pro','Courier New', Courier, monospace;
-    font-weight: 700;
-    color: #55aea4;
+.loginText {
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #55aea4;
 }
 
-.logininfo{
-    font-family: 'Source Code Pro','Courier New', Courier, monospace;
-    font-weight: 700;
-    font-size: 15px;
-    color: #55aea4;
+.logininfo {
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 15px;
+  color: #55aea4;
 }
 
-.loginHeader{
-    font-family: 'Source Code Pro','Courier New', Courier, monospace;
-    font-weight: 900;
-    color: #55aea4;
-    margin-bottom: 10px;
+.loginHeader {
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-weight: 900;
+  color: #55aea4;
+  margin-bottom: 10px;
 }
 
-.username, .password {
-    display: flex;
+.username,
+.password {
+  display: flex;
 }
 
-.Login{
-    padding: 20px;
+.Login {
+  padding: 20px;
 }
 
-.btn{
-    margin-top: 20px;
-    background-color: #064f1a !important;
-    border: none !important;
-    width: 100%;
+.btn {
+  margin-top: 20px;
+  background-color: #064f1a !important;
+  border: none !important;
+  width: 100%;
+  padding: 5px !important;
 }
 
-.inputvalue{
-    border: none;
-    border-bottom: 1px solid #ccc;
-    margin-left: 25px;
+.inputvalue {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-left: 25px;
 }
 
-.inputvalue:focus{
-    border: none;
-    box-shadow: none;
-    border-bottom: 2px solid #ccc;
+.inputvalue:focus {
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid #ccc;
 }
 
-.password{
-    margin-top: 20px;
+.password {
+  margin-top: 20px;
 }
 
-.logout{
-    border: none;
-    background:none;
-    margin: 0px 10px;
-    font-size: 15px;
-    font-weight: 600;
+.logout {
+  border: none;
+  background: none;
+  margin: 0px 10px;
+  font-size: 15px;
+  font-weight: 600;
 }
