@@ -42,7 +42,7 @@ const Table = ({ progress }) => {
   return (
     <div className='con'>
       <div className='table-row table-header'>
-        <div>Status</div>
+        <div>Done</div>
         <div>Name</div>
         <div>Notes</div>
         <div>Pattern</div>

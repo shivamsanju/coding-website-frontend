@@ -1,60 +1,61 @@
 .popup-container {
-    background-color: #f8f9fa;
-    border-radius: 3px;
-    transition: all ease 0.3s;
-    position: fixed;
-    left: 4%;
-    top: 5%;
-    bottom: 5%;
-    width: 90%;
-    padding: 5px;
-    box-shadow: rgba(17, 17, 18, 0.48) 3px 2px 10px 0px, rgba(5, 5, 5, 0.8) -3px -2px 10px 0px;
+  background-color: #f8f9fa;
+  border-radius: 3px;
+  transition: all ease 0.3s;
+  position: fixed;
+  left: 4%;
+  top: 5%;
+  bottom: 5%;
+  width: 90%;
+  padding: 5px;
+  box-shadow: rgba(17, 17, 18, 0.48) 3px 2px 10px 0px,
+    rgba(5, 5, 5, 0.8) -3px -2px 10px 0px;
 }
 
-.popup-container > form{
-    width: 100%;
-    height: 100%;
+.popup-container > form {
+  width: 100%;
+  height: 100%;
 }
 
 .popup-container > form > textarea {
-    padding: 10px;
-    color: #084840;
-    background-color: #f8f9fa;
-    border: none;
-    resize: none;
-    font-size: 12px;
-    font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
-    font-weight: 700;
-    width: 100%;
-    height: 94%;
+  padding: 10px;
+  color: #084840;
+  background-color: #f8f9fa;
+  border: none;
+  resize: none;
+  font-size: 12px;
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-weight: 700;
+  width: 100%;
+  height: 94%;
 }
 
 .popup-container > form > button {
-    font-size: 12px;
-    font-weight: bold;
-    border: None;
-    border-radius: 5px;
-    background-color: #036E15;
-    color: white;
-    box-shadow: 0px 2px 2px 0px #ccc;
-    padding: 5px;
-    margin-top: 5px;
-    transition: all ease 0.2s;
-    opacity: 85%;
+  font-size: 12px;
+  font-weight: bold;
+  border: None;
+  border-radius: 5px;
+  background-color: #036e15;
+  color: white;
+  box-shadow: 0px 2px 2px 0px #ccc;
+  padding: 5px !important;
+  margin-top: 5px;
+  transition: all ease 0.2s;
+  opacity: 85%;
 }
 
 .popup-container > form > button:hover {
-    opacity: 100%;
+  opacity: 100%;
 }
 
-.cancel{
-    background-color: #eb0000 !important;
-    margin-left: 10px !important;
-    border-radius: 5px;
+.cancel {
+  background-color: #eb0000 !important;
+  margin-left: 10px !important;
+  border-radius: 5px;
 }
 
-.ide{
-    background-color: rgb(5, 90, 127) !important;
-    margin-left: 10px !important;
-    border-radius: 5px !important;
+.ide {
+  background-color: rgb(5, 90, 127) !important;
+  margin-left: 10px !important;
+  border-radius: 5px !important;
 }

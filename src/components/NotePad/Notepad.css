@@ -1,0 +1,12 @@
+.notepadcard > div {
+  padding: 20px;
+}
+
+.notepadcard > div > h6 {
+  color: #198754;
+  font-weight: bold;
+}
+
+.notepadcard > div:nth-child(even) {
+  background-color: #f1f1f1;
+}

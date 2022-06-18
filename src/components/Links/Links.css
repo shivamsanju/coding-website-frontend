@@ -1,0 +1,30 @@
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: #d6d8da;
+  margin: 20px 10px;
+  transition: all ease 0.3s;
+}
+
+.links:hover {
+  background-color: #ccc;
+}
+
+.links > a {
+  color: rgb(30, 30, 137);
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cons {
+  margin: 0 9%;
+}
+
+@media screen and (max-width: 800px) {
+  .cons {
+    margin: 0 !important;
+  }
+}
