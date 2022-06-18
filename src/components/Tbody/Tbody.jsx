@@ -33,61 +33,62 @@ const Tbody = ({ ques, cState }) => {
   };
 
   return (
-    <>
+    <div className={ques.done ? 'done table-row' : 'table-row'}>
       {isPopupOpen && <Popup qId={qId} note={note} popupToggle={openPopup} />}
-      <tr className={ques.done ? 'done' : null}>
-        <td className='qid'>
-          <input
-            type='checkbox'
-            checked={ques.done}
-            id={ques.id}
-            onChange={(checkbox) => {
-              checkboxHandler(checkbox);
-            }}
-          ></input>
-        </td>
-        <td className='qname'>
-          <a href={ques.url} rel='noreferrer' target='_blank'>
-            {ques.name}
-          </a>
-        </td>
-        <td className='qhint'>
-          <img
-            title={ques.notes}
-            src={`${iconPath}notes.png`}
-            height={18}
-            alt='link'
-            onClick={() => {
-              openNotes(ques.id, ques.notes);
-            }}
-          />
-        </td>
-        <td className='qpatterns'>
-          {ques.pattern.map((pattern) => {
-            return <span className='pattern'>{pattern}</span>;
-          })}
-        </td>
-        <td>
-          <span className={ques.difficulty.toLowerCase()}>
-            {ques.difficulty}
-          </span>
-        </td>
-        <td className='qcomp'>
-          {ques.companies.map((company) => {
-            return (
+      <div className='qid'>
+        <input
+          type='checkbox'
+          checked={ques.done}
+          id={ques.id}
+          onChange={(checkbox) => {
+            checkboxHandler(checkbox);
+          }}
+        ></input>
+      </div>
+      <div className='qname'>
+        <a href={ques.url} rel='noreferrer' target='_blank'>
+          {ques.name}
+        </a>
+      </div>
+      <div className='qhint'>
+        <img
+          title={ques.notes}
+          src={`${iconPath}notes.png`}
+          height={18}
+          alt='link'
+          onClick={() => {
+            openNotes(ques.id, ques.notes);
+          }}
+        />
+      </div>
+      <div className='qpatterns'>
+        {ques.pattern.map((pattern, key) => {
+          return (
+            <span key={key} className='pattern'>
+              {pattern}
+            </span>
+          );
+        })}
+      </div>
+      <div>
+        <span className={ques.difficulty.toLowerCase()}>{ques.difficulty}</span>
+      </div>
+      <div className='qcomp'>
+        {ques.companies.map((company, key) => {
+          return (
+            <div key={key}>
               <img
-                key={company}
                 title={company}
                 src={`${iconPath}${company}.png`}
                 alt={company}
                 data-tip={company}
                 width={18}
               />
-            );
-          })}
-        </td>
-      </tr>
-    </>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

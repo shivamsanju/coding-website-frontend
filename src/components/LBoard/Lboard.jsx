@@ -27,11 +27,8 @@ const LBoard = ({ popupToggle }) => {
 
   return (
     <div className='leaderboard'>
-      <div>
-        Problems Solved{' '}
-        <button type='text' onClick={cancelHandler}>
-          X
-        </button>
+      <div className='leaderboard-header'>
+        Problems Solved <button type='text' onClick={cancelHandler} />
       </div>
       <table className='userCard'>
         {leaderData ? (

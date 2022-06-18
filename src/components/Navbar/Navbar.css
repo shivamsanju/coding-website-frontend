@@ -2,9 +2,20 @@
     width: 100%;
 }
 
-.social > button{
-    border: none;
-    background-color: inherit;
+progress::-moz-progress-bar { 
+    background:#f8f9fa;
+}
+
+progress::-moz-progress-value { 
+    background: #008238; 
+}
+
+progress::-webkit-progress-bar { 
+    background:#f8f9fa;
+}
+
+progress::-webkit-progress-value { 
+    background:#008238; 
 }
 
 .progress-bar {
@@ -17,53 +28,63 @@
     overflow: hidden;
 }
 .progress-text{
-    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position:fixed;
-    top: 0%;
     z-index: 1000;
     color:#0f370d;
-    font-size:14px;
+    font-size:0.75em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
-    margin-left: 35vw;
 }
 
 @media screen and (max-width: 800px) {
-    .header, .progress-text{
-        visibility: hidden;
+    .navbar{
+        display: grid;
+        grid-template-columns: 1fr !important;
     }
 
-    .header img{
-        visibility: visible !important;
+    .navbar > div{
+        justify-content: center !important;
+        margin-left: 0 !important;
+    }
+
+    .header{
+        margin-bottom: 0 !important;
     }
   }
 
 
-progress::-moz-progress-bar { 
-    background:#f8f9fa;
-}
-
-progress::-moz-progress-value { 
-    background: #008272; 
-}
-
-progress::-webkit-progress-bar { 
-    background:#f8f9fa;
-}
-
-progress::-webkit-progress-value { 
-    background:#008272
-}
-
 .navbar{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 13fr 8fr;
 }
 
+
+.navbar > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar > div:nth-child(2){
+    justify-content: center;
+}
+
+.navbar > div > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2em;
+}
+
+
+.navbar > div > div >a,button {
+    margin: 0 0.5em;
+}
 
 .header{
     display: flex;
@@ -74,21 +95,8 @@ progress::-webkit-progress-value {
     margin-left: 15%;
 }
 
-.social{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 15px 0;
-}
 
-.github, .linkd img{
-    margin: 0px 5px;
-}
-
-.logoutbtn img{
-    margin: 0 150px 0 0;
-}
-
-.leaderboard-btn img{
-    margin-left: 50px;
+button{
+    border: none;
+    background-color: inherit;
 }

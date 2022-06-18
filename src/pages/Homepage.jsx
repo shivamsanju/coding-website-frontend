@@ -4,7 +4,6 @@ import Table from '../components/Table/Table';
 import { useState } from 'react';
 
 const Homepage = () => {
-  console.log('Homepage');
   const [doneQ, setDoneQ] = useState(0);
   const progress = (data) => {
     let total = 0;

@@ -56,7 +56,12 @@ const Popup = ({ qId, note, popupToggle }) => {
             {notes}
           </iframe>
         ) : (
-          <textarea onChange={notesHandler}>{note}</textarea>
+          <textarea
+            onChange={notesHandler}
+            placeholder='Start writing notes here...'
+          >
+            {note}
+          </textarea>
         )}
         <button type='submit'>Add</button>
         <button className='cancel' onClick={cancelHandler}>

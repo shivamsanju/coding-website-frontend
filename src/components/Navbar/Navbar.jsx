@@ -21,9 +21,9 @@ const Navbar = ({ done }) => {
       {isPopupOpen && <LBoard popupToggle={openPopup} />}
       <div className='nav-container'>
         <div>
-          <span className='progress-text'>
+          <div className='progress-text'>
             You have completed {done} out of 171 questions
-          </span>
+          </div>
           <progress
             className='progress-bar'
             id='file'
@@ -32,39 +32,66 @@ const Navbar = ({ done }) => {
           ></progress>
         </div>
         <div className='navbar'>
-          <span className='header'>
+          <div className='header'>
             <img src={`${iconPath}logo.png`} alt='link' height={25} />
             Leetcode Problems
-          </span>
-          <div className='social'>
-            <a className='github' href='https://shvmsnju.vercel.app/'>
-              <img src={`${iconPath}personal.png`} alt='Website' height={25} />
-            </a>
-            <a className='linkd' href='https://www.linkedin.com/in/shvmsnju'>
-              <img
-                src={`${iconPath}linkedinicon.png`}
-                alt='LinkedIn'
-                height={25}
-              />
-            </a>
-            <a className='github' href='https://github.com/shivamsanju'>
-              <img src={`${iconPath}githubicon.png`} alt='GitHub' height={25} />
-            </a>
-            <button className='leaderboard-btn' onClick={popupHandler}>
-              <img
-                src={`${iconPath}leaderboard.png`}
-                alt='LeaderBoard'
-                height={25}
-              />
-            </button>
-            <button className='logoutbtn' onClick={logoutHandler}>
-              <img
-                title='logout'
-                src={`${iconPath}logout.png`}
-                alt='logout'
-                height={25}
-              />
-            </button>
+          </div>
+          <div className='menu'>
+            <div className='social'>
+              <a
+                className='github'
+                target='_blank'
+                rel='noreferrer'
+                href='https://shvmsnju.vercel.app/'
+              >
+                <img
+                  src={`${iconPath}personal.png`}
+                  alt='Website'
+                  height={25}
+                />
+              </a>
+              <a
+                className='linkd'
+                target='_blank'
+                rel='noreferrer'
+                href='https://www.linkedin.com/in/shvmsnju'
+              >
+                <img
+                  src={`${iconPath}linkedinicon.png`}
+                  alt='LinkedIn'
+                  height={25}
+                />
+              </a>
+              <a
+                className='github'
+                target='_blank'
+                rel='noreferrer'
+                href='https://github.com/shivamsanju'
+              >
+                <img
+                  src={`${iconPath}githubicon.png`}
+                  alt='GitHub'
+                  height={25}
+                />
+              </a>
+            </div>
+            <div>
+              <button className='leaderboard-btn' onClick={popupHandler}>
+                <img
+                  src={`${iconPath}leaderboard.png`}
+                  alt='LeaderBoard'
+                  height={25}
+                />
+              </button>
+              <button className='logoutbtn' onClick={logoutHandler}>
+                <img
+                  title='logout'
+                  src={`${iconPath}logout.png`}
+                  alt='logout'
+                  height={25}
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,42 @@
+.table-row{
+  display: grid;  
+  grid-template-columns: 1fr 5fr 1fr 3fr 2fr 7fr;
+}
+
+@media screen and (max-width: 800px) {
+  .table-row{
+    grid-template-columns: 2fr 7fr 3fr 4fr 9fr;
+  }
+  .qname {
+    justify-content: flex-start !important;
+  }
+
+  .table-row > div{
+    padding: 0.6em !important;
+  }
+
+  .table-row > div:nth-last-child(3) {
+      display: none;
+  }
+  .table-row > div:nth-last-child(1)  img{
+    height: 12px;
+    width: 12px;
+}
+}
+
+.table-row > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3em;
+  flex-wrap: wrap;
+}
+
+.done{
+  background-color: #b4f6b9 !important;
+}
+
+
 .qcomp img {
   margin: 7px;
 }
@@ -10,10 +49,10 @@
 
 .qname > a {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 14px;
+  font-size: 0.85em;
   font-weight: 700;
   text-decoration: none;
-  color: rgb(63, 63, 63);
+  color: rgb(60, 60, 60);
   transition: all 0.2s ease;
 }
 
@@ -23,22 +62,20 @@
 }
 
 .quesId{
-  font-size: 12px;
+  font-size: 0.75px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 700;
 }
 
 
 .easy {
-  background-color: #084d08;
+  background-color: #2d642d;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-radius: 50px;
   padding: 1px 7px 4px 7px;
-  font-size: 11px;
+  font-size: 0.65em;
   font-weight: 700;
   color:#f8f9fa;
-  /* box-shadow: 0px 1px 1px 0px #ccc; */
-
 }
 
 .medium {
@@ -46,11 +83,9 @@
   border-radius: 50px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 1px 7px 4px 7px;
-  font-size: 11px;
+  font-size: 0.65em;
   font-weight: 700;
   color:rgb(63, 59, 40);
-  /* box-shadow: 0px 1px 1px 0px #ccc; */
-
 }
 
 .hard {
@@ -58,15 +93,10 @@
   border-radius: 50px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 1px 7px 4px 7px;
-  font-size: 11px;
+  font-size: 0.65em;
   font-weight: 700;
   color:rgb(255, 223, 217);
-  /* box-shadow: 0px 1px 1px 0px #ccc; */
 
-}
-
-.qid {
-  width: 50px;
 }
 
 .pattern {
@@ -74,13 +104,11 @@
   background-color: rgb(224, 249, 252);
   border-radius: 50px;
   padding: 1px 7px 4px 7px;
-  font-size: 11px;
+  font-size: 0.7em;
   font-weight: 700;
   margin: 3px;
   color: rgb(63, 63, 63);
   white-space: nowrap;
-
-  /* box-shadow: 0px 1px 1px 0px #ccc; */
 }
 
 .qhint img{

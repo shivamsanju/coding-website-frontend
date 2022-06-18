@@ -2,12 +2,17 @@
     display: flex;
     flex-direction: column;
     position:fixed;
-    top: 7%;
-    left:72%;
+    top: 3em;
+    right: 8em;
     padding: 3px;
     z-index: 1000;
     background-color: #f9f8fa;
     box-shadow: rgba(17, 17, 18, 0.48) 1px 1px 5px 0px, rgba(5, 5, 5, 0.8) -1px -1px 5px 0px;
+}
+
+.leaderboard-header{
+    display: grid;
+    grid-template-columns: 9fr 2fr;
 }
 
 .userCard{
@@ -32,18 +37,21 @@
 .leaderboard > div {
     display: flex;
     color: #55aea4 !important;
-    font-size: 15px;
+    font-size: 0.8em;
     font-weight: 700;
+    padding-left: 1em;
 }
 
 
 .leaderboard > div> button{
-    background-color: #f9f8fa;
-    border: none;
-    background-color: none;
-    color: red;
-    font-weight: 900;
-    font-size: 17px;
-    margin-top: -3px;
-    margin-left: 4px;
+    color: white;
+    background-color: red !important;
+    border-radius: 50%;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 0 !important;
+    height: 1em;
+    width: 1em;
+    margin: 0.1em !important;
+    margin-left: 1em !important;
 }
