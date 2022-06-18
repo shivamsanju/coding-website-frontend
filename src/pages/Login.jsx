@@ -36,7 +36,7 @@ export default function Login({ login }) {
   }
   return (
     <div className='container'>
-      <h1 className='loginHeader'>LEETCODE PROBLEMS LOGIN</h1>
+      <h2 className='loginHeader'>LEETCODE PROBLEMS LOGIN</h2>
       <div className='Login'>
         <form onSubmit={handleSubmit}>
           <FormGroup className='username' controlId='username' bsSize='large'>
