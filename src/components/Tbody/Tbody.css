@@ -1,4 +1,6 @@
 .table-row{
+  margin: 0;
+  padding: 0;
   display: grid;  
   grid-template-columns: 1fr 5fr 1fr 3fr 2fr 7fr;
 }
