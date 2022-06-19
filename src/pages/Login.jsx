@@ -7,12 +7,17 @@ export default function Login({ login }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [signup, toggleSignup] = useState(false);
+  const [errorAlert, setAllert] = useState();
+  const [isBtnLoading, setLoading] = useState(true);
 
   function performValidation() {
     return username.length > 0 && password.length > 0;
   }
   function handleSubmit(event) {
     event.preventDefault();
+    setLoading(true);
+    setAllert('');
     let payload = {
       username: username,
       password: password,
@@ -28,49 +33,128 @@ export default function Login({ login }) {
           login(json.token);
           navigate('/');
         } else {
-          alert('Invalid Credentials');
-          setUsername('');
-          setPassword('');
+          console.log(json.message);
+          setAllert(json.message);
+          setLoading(false);
         }
       });
   }
+
+  function handleSignUp(event) {
+    event.preventDefault();
+    setLoading(true);
+    setAllert('');
+    let payload = {
+      username: username,
+      password: password,
+    };
+    fetch(`https://leetcode-app-backend.herokuapp.com/api/signup`, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.success === true) {
+          login(json.token);
+          navigate('/');
+        } else {
+          console.log(json.message);
+          setAllert(json.message);
+          setLoading(false);
+        }
+      });
+  }
+
+  const signupToggler = (event) => {
+    event.preventDefault();
+    setUsername('');
+    setPassword('');
+    toggleSignup(!signup);
+  };
   return (
     <div className='container'>
       <h2 className='loginHeader'>LEETCODE PROBLEMS LOGIN</h2>
-      <div className='Login'>
-        <form onSubmit={handleSubmit}>
-          <FormGroup className='username' controlId='username' bsSize='large'>
-            <FormLabel className='loginText'>Username</FormLabel>
-            <FormControl
-              className='inputvalue'
-              autoFocus
-              type='text'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </FormGroup>
-          <FormGroup className='password' controlId='password' bsSize='large'>
-            <FormLabel className='loginText'>Password</FormLabel>
-            <FormControl
-              className='inputvalue'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type='password'
-            />
-          </FormGroup>
-          <Button
-            block
-            bsSize='large'
-            disabled={!performValidation()}
-            type='submit'
-            className='btn'
-          >
-            Login
-          </Button>
-        </form>
+      <div className='login-signup' onClick={signupToggler}>
+        {signup ? 'Click here to Log In!' : 'Click here to Sign Up!'}
       </div>
-      <h1 className='logininfo'>Username: demo</h1>
-      <h1 className='logininfo'>Password: pass123</h1>
+      {signup ? (
+        <div className='Login'>
+          <form onSubmit={handleSignUp}>
+            <FormGroup className='username' controlId='username' bsSize='large'>
+              <FormLabel className='loginText'>Username</FormLabel>
+              <FormControl
+                className='inputvalue'
+                autoFocus
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </FormGroup>
+            <FormGroup className='password' controlId='password' bsSize='large'>
+              <FormLabel className='loginText'>Password</FormLabel>
+              <FormControl
+                className='inputvalue'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type='password'
+              />
+            </FormGroup>
+            <FormGroup className='password' controlId='password' bsSize='large'>
+              <FormLabel className='loginText'>Confirm</FormLabel>
+              <FormControl
+                className='inputvalue'
+                value={password}
+                type='password'
+              />
+            </FormGroup>
+            <p className='error-alert'>{errorAlert}</p>
+            <Button
+              block
+              bsSize='large'
+              disabled={!performValidation()}
+              type='submit'
+              className='btn'
+            >
+              {isBtnLoading ? 'Sign Up' : '...'}
+            </Button>
+          </form>
+        </div>
+      ) : (
+        <div className='Login'>
+          <form onSubmit={handleSubmit}>
+            <FormGroup className='username' controlId='username' bsSize='large'>
+              <FormLabel className='loginText'>Username</FormLabel>
+              <FormControl
+                className='inputvalue'
+                autoFocus
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </FormGroup>
+            <FormGroup className='password' controlId='password' bsSize='large'>
+              <FormLabel className='loginText'>Password</FormLabel>
+              <FormControl
+                className='inputvalue'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type='password'
+              />
+            </FormGroup>
+            <p className='error-alert'>{errorAlert}</p>
+            <Button
+              block
+              bsSize='large'
+              disabled={!performValidation()}
+              type='submit'
+              className='btn'
+            >
+              {isBtnLoading ? 'Log In' : '...'}
+            </Button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }
