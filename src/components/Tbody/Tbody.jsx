@@ -1,29 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Tbody.css';
 import Cookies from 'universal-cookie';
 import Popup from '../Notes/Popup';
 
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-const Tbody = ({ ques, cState, renderNote }) => {
+const Tbody = ({ Pques, updateProgress, renderNote }) => {
+  const [ques, setQues] = useState(Pques);
   const [qId, setQId] = useState();
   const [note, setNote] = useState();
   const [isPopupOpen, openPopup] = useState(false);
   const cookies = new Cookies();
   const token = cookies.get('token');
-  const checkboxHandler = (checkbox) => {
-    const target = checkbox.currentTarget;
+
+  useEffect(() => {
+    setQues(Pques);
+  }, [Pques]);
+
+  const checkboxHandler = async (checkbox) => {
+    const target = await checkbox.currentTarget;
+    const id = await target.id;
+    const currStatus = await target.checked;
+    ques.done = !currStatus;
+    setQues({ ...ques });
+    updateProgress(id, !currStatus);
     const payload = {
-      id: target.id,
-      currStatus: target.checked,
+      id: id,
+      currStatus: !currStatus,
     };
-    console.log(payload);
-    fetch(`https://leetcode-app-backend.herokuapp.com/api/status`, {
+    await fetch(`https://leetcode-app-backend.herokuapp.com/api/status`, {
       method: 'post',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', token: token },
       body: JSON.stringify(payload),
-    }).then(cState(payload));
+    });
   };
 
   const openNotes = (qId, qNote) => {

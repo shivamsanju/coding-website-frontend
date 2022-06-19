@@ -3,10 +3,12 @@ import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import LBoard from '../LBoard/Lboard';
+import { useEffect } from 'react';
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-const Navbar = ({ done }) => {
+const Navbar = ({ data }) => {
   const [isPopupOpen, openPopup] = useState(false);
+
   const cookies = new Cookies();
   const navigate = useNavigate();
   const logoutHandler = () => {
@@ -16,18 +18,19 @@ const Navbar = ({ done }) => {
   const popupHandler = () => {
     openPopup(true);
   };
+
   return (
     <>
       {isPopupOpen && <LBoard popupToggle={openPopup} />}
       <div className='nav-container'>
         <div>
           <div className='progress-text'>
-            You have completed {done} out of 171 questions
+            You have completed {data} out of 171 questions
           </div>
           <progress
             className='progress-bar'
             id='file'
-            value={done}
+            value={data}
             max='171'
           ></progress>
         </div>

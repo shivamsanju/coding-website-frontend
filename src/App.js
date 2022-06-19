@@ -7,14 +7,24 @@ import Logout from './pages/Logout';
 import PageNotFound from './pages/PageNotFound';
 import React from 'react';
 import Cookies from 'universal-cookie';
+import Notes from './pages/Notes';
+import Link from './pages/Links';
 
 function App() {
   const cookies = new Cookies();
   const token = cookies.get('token');
   const [isLoggedIn, setLoggedIn] = useState(token);
 
-  const LoginWrapper = ({ isLoggedIn }) => {
+  const HomeWrapper = ({ isLoggedIn }) => {
     return isLoggedIn ? <Homepage /> : <Login login={login} />;
+  };
+
+  const NotesWrapper = ({ isLoggedIn }) => {
+    return isLoggedIn ? <Notes /> : <Login login={login} />;
+  };
+
+  const LinkWrapper = ({ isLoggedIn }) => {
+    return isLoggedIn ? <Link /> : <Login login={login} />;
   };
 
   const login = (token) => {
@@ -25,7 +35,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LoginWrapper isLoggedIn={isLoggedIn} />} />
+        <Route path='/' element={<HomeWrapper isLoggedIn={isLoggedIn} />} />
+        <Route
+          path='/notes'
+          element={<NotesWrapper isLoggedIn={isLoggedIn} />}
+        />
+        <Route
+          path='/links'
+          element={<LinkWrapper isLoggedIn={isLoggedIn} />}
+        />
         <Route path='/logout' element={<Logout />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>

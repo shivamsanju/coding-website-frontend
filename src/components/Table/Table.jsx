@@ -26,16 +26,15 @@ const Table = ({ progress }) => {
       });
   }, []);
 
-  const checkBoxState = (q) => {
-    data.forEach((p) => {
-      if (p.id.toString() === q.id) {
-        console.log(p.done, q.currStatus);
-        p.done = q.currStatus;
-        console.log(p.done, q.currStatus);
-        console.log('changed');
+  const updateProgress = (id, status) => {
+    const updatedValue = data.map((ques) => {
+      if (ques.id.toString() === id) {
+        return { ...ques, done: status };
+      } else {
+        return ques;
       }
     });
-    setData([...data]);
+    setData([...updatedValue]);
     progress([...data]);
   };
 
@@ -50,7 +49,7 @@ const Table = ({ progress }) => {
     setData([...newData]);
   };
 
-  console.log(isLoading);
+  console.log('jbsdhbjksdbkdjsbkj');
   return (
     <div className='con'>
       <div className='table-row table-header'>
@@ -66,12 +65,12 @@ const Table = ({ progress }) => {
           <SpinnerDotted enabled={isLoading} />
         </div>
       ) : (
-        data.map((ques) => {
+        data.map((ques, key) => {
           return (
             <Tbody
-              key={ques.id}
-              ques={ques}
-              cState={checkBoxState}
+              key={key}
+              Pques={ques}
+              updateProgress={updateProgress}
               renderNote={renderNote}
             />
           );
