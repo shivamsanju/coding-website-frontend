@@ -24,6 +24,19 @@ const NotePad = () => {
       });
   }, []);
 
+  let notesData = [];
+  for (const ques of data) {
+    if (ques.notes) {
+      notesData.push(
+        <div key={ques.id}>
+          <h6 className='question-heading'>{ques.notes ? ques.name : ''}</h6>
+          <pre>{ques.notes}</pre>
+        </div>
+      );
+    }
+  }
+  console.log(notesData);
+
   return isLoading ? (
     <div className='spinner'>
       <SpinnerDotted enabled={isLoading} />
@@ -31,18 +44,8 @@ const NotePad = () => {
   ) : (
     <div className='con'>
       <div className='notepadcard'>
-        {data.map((ques, key) => {
-          if (ques.notes) {
-            return (
-              <div key={key}>
-                <h6 className='question-heading'>
-                  {ques.notes ? ques.name : ''}
-                </h6>
-                <pre>{ques.notes}</pre>
-              </div>
-            );
-          }
-        })}
+        {notesData}
+        {notesData.length <= 0 && <div>Please start taking notes...</div>}
       </div>
     </div>
   );

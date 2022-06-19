@@ -7,16 +7,17 @@ export default function Login({ login }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [cnfPassword, setCnfPassword] = useState('');
   const [signup, toggleSignup] = useState(false);
   const [errorAlert, setAllert] = useState();
-  const [isBtnLoading, setLoading] = useState(true);
+  const [isBtnActive, setBtnActive] = useState(true);
 
   function performValidation() {
     return username.length > 0 && password.length > 0;
   }
   function handleSubmit(event) {
     event.preventDefault();
-    setLoading(true);
+    setBtnActive(false);
     setAllert('');
     let payload = {
       username: username,
@@ -35,18 +36,19 @@ export default function Login({ login }) {
         } else {
           console.log(json.message);
           setAllert(json.message);
-          setLoading(false);
+          setBtnActive(true);
         }
       });
   }
 
   function handleSignUp(event) {
     event.preventDefault();
-    setLoading(true);
+    setBtnActive(false);
     setAllert('');
     let payload = {
       username: username,
       password: password,
+      confPassword: cnfPassword,
     };
     fetch(`https://leetcode-app-backend.herokuapp.com/api/signup`, {
       method: 'post',
@@ -61,13 +63,14 @@ export default function Login({ login }) {
         } else {
           console.log(json.message);
           setAllert(json.message);
-          setLoading(false);
+          setBtnActive(true);
         }
       });
   }
 
   const signupToggler = (event) => {
     event.preventDefault();
+    setAllert('');
     setUsername('');
     setPassword('');
     toggleSignup(!signup);
@@ -104,7 +107,8 @@ export default function Login({ login }) {
               <FormLabel className='loginText'>Confirm</FormLabel>
               <FormControl
                 className='inputvalue'
-                value={password}
+                value={cnfPassword}
+                onChange={(e) => setCnfPassword(e.target.value)}
                 type='password'
               />
             </FormGroup>
@@ -116,7 +120,7 @@ export default function Login({ login }) {
               type='submit'
               className='btn'
             >
-              {isBtnLoading ? 'Sign Up' : '...'}
+              {isBtnActive ? 'Sign Up' : '...'}
             </Button>
           </form>
         </div>
@@ -150,7 +154,7 @@ export default function Login({ login }) {
               type='submit'
               className='btn'
             >
-              {isBtnLoading ? 'Log In' : '...'}
+              {isBtnActive ? 'Log In' : '...'}
             </Button>
           </form>
         </div>

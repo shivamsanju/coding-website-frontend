@@ -74,6 +74,14 @@ const Navbar = ({ done }) => {
                   height={25}
                 />
               </a>
+              <a
+                className='github'
+                target='_blank'
+                rel='noreferrer'
+                href='https://github.com/shivamsanju/dsa-webapp-frontend/fork'
+              >
+                <img src={`${iconPath}fork.png`} alt='Website' height={25} />
+              </a>
             </div>
             <div>
               <button className='leaderboard-btn' onClick={popupHandler}>

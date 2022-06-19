@@ -38,20 +38,22 @@ const LBoard = ({ popupToggle }) => {
           <SpinnerDotted enabled={isLoading} height={25} width={25} />
         </div>
       ) : (
-        <table className='userCard'>
-          {leaderData ? (
-            leaderData.map((user) => {
-              return (
-                <tr>
-                  <td>{user.username}</td>
-                  <td>{user.done}</td>
-                </tr>
-              );
-            })
-          ) : (
-            <></>
-          )}
-        </table>
+        <div className='leaderboard-container'>
+          <table className='userCard'>
+            {leaderData ? (
+              leaderData.map((user) => {
+                return (
+                  <tr>
+                    <td>{user.username}</td>
+                    <td>{user.done}</td>
+                  </tr>
+                );
+              })
+            ) : (
+              <></>
+            )}
+          </table>
+        </div>
       )}
     </div>
   );
