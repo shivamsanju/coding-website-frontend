@@ -26,6 +26,11 @@
   .table-header > div {
     font-size: 0.55em !important;
   }
+
+  .search-bar > input {
+    width: 80% !important;
+    font-size: 10px;
+  }
 }
 
 .table-header > div {
