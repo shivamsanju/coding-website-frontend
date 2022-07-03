@@ -8,6 +8,7 @@ const Table = ({ progress }) => {
   const cookies = new Cookies();
   const token = cookies.get('token');
   const [data, setData] = useState([]);
+  const [fullData, setFullData] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,11 +21,38 @@ const Table = ({ progress }) => {
       .then((json) => {
         if (json.questions) {
           setData(json.questions);
+          setFullData(json.questions);
           progress(json.questions);
         }
         setLoading(false);
       });
   }, []);
+
+  const searchQues = (event) => {
+    event.preventDefault();
+    if (event.target.value != '') {
+      console.log(event.target.value);
+      const updatedQues = fullData.filter((ques) => {
+        if (
+          ques.name.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          ques.companies
+            .join('')
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase()) ||
+          ques.pattern
+            .join('')
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
+        ) {
+          return ques;
+        }
+      });
+      console.log(updatedQues);
+      setData(updatedQues);
+    } else {
+      setData(fullData);
+    }
+  };
 
   const updateProgress = (id, status) => {
     const updatedValue = data.map((ques) => {
@@ -52,6 +80,15 @@ const Table = ({ progress }) => {
   console.log('jbsdhbjksdbkdjsbkj');
   return (
     <div className='con'>
+      <div className='search-bar'>
+        <input
+          type='text'
+          placeholder='Search by question name or company or pattern'
+          onChange={(e) => {
+            searchQues(e);
+          }}
+        ></input>
+      </div>
       <div className='table-row table-header'>
         <div>Done</div>
         <div>Name</div>

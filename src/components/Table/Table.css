@@ -40,3 +40,11 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+.search-bar > input {
+  margin: 10px 10px;
+  width: 50%;
+  padding-left: 15px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+}
