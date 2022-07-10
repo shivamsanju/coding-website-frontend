@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'universal-cookie';
-import { SpinnerDotted } from 'spinners-react';
+import { SpinnerCircularFixed } from 'spinners-react';
 import './Notepad.css';
 
 const NotePad = () => {
@@ -39,7 +39,7 @@ const NotePad = () => {
 
   return isLoading ? (
     <div className='spinner'>
-      <SpinnerDotted enabled={isLoading} />
+      <SpinnerCircularFixed enabled={isLoading} />
     </div>
   ) : (
     <div className='con'>
