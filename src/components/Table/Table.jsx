@@ -2,7 +2,7 @@ import './Table.css';
 import React, { useState, useEffect } from 'react';
 import Tbody from '../Tbody/Tbody';
 import Cookies from 'universal-cookie';
-import { SpinnerDotted } from 'spinners-react';
+import { SpinnerCircularFixed } from 'spinners-react';
 
 const Table = ({ progress }) => {
   const cookies = new Cookies();
@@ -28,8 +28,15 @@ const Table = ({ progress }) => {
       });
   }, []);
 
-  const searchQues = (event) => {
+  function delay(milliseconds) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    });
+  }
+
+  const searchQues = async (event) => {
     event.preventDefault();
+    await delay(200);
     if (event.target.value != '') {
       console.log(event.target.value);
       const updatedQues = fullData.filter((ques) => {
@@ -88,6 +95,7 @@ const Table = ({ progress }) => {
             searchQues(e);
           }}
         ></input>
+        <span> 🔍</span>
       </div>
       <div className='table-row table-header'>
         <div>Done</div>
@@ -99,7 +107,7 @@ const Table = ({ progress }) => {
       </div>
       {isLoading ? (
         <div className='spinner'>
-          <SpinnerDotted enabled={isLoading} />
+          <SpinnerCircularFixed enabled={isLoading} />
         </div>
       ) : (
         data.map((ques, key) => {

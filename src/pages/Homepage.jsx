@@ -22,7 +22,7 @@ const Homepage = () => {
   const TabWrapper = () => {
     return (
       <div className='tabs'>
-        <button type='text' id='home' onClick={() => navigate('/home')}>
+        <button type='text' id='home' onClick={() => navigate('/')}>
           Home
         </button>
         <button type='text' id='notes' onClick={() => navigate('/notes')}>

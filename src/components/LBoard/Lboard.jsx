@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './LBoard.css';
 import Cookies from 'universal-cookie';
 import { useEffect } from 'react';
-import { SpinnerDotted } from 'spinners-react';
+import { SpinnerCircularFixed } from 'spinners-react';
 
 const LBoard = ({ popupToggle }) => {
   const cookies = new Cookies();
@@ -31,11 +31,11 @@ const LBoard = ({ popupToggle }) => {
   return (
     <div className='leaderboard'>
       <div className='leaderboard-header'>
-        Problems Solved <button type='text' onClick={cancelHandler} />
+        Problems Solved <button type='text' onClick={cancelHandler} value='X' />
       </div>
       {isLoading ? (
         <div className='spinner-lb'>
-          <SpinnerDotted enabled={isLoading} height={25} width={25} />
+          <SpinnerCircularFixed enabled={isLoading} height={25} width={25} />
         </div>
       ) : (
         <div className='leaderboard-container'>
