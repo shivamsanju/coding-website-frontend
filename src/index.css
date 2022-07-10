@@ -6,15 +6,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 }
 
 code {
   font-family: 'Source Code Pro' monospace;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100%;
+  background-color: #f8f9fa;
 }
-

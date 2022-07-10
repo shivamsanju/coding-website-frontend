@@ -37,16 +37,18 @@ const NotePad = () => {
   }
   console.log(notesData);
 
-  return isLoading ? (
-    <div className='spinner'>
-      <SpinnerCircularFixed enabled={isLoading} />
-    </div>
-  ) : (
+  return (
     <div className='con'>
-      <div className='notepadcard'>
-        {notesData}
-        {notesData.length <= 0 && <div>Please start taking notes...</div>}
-      </div>
+      {isLoading ? (
+        <div className='spinner'>
+          <SpinnerCircularFixed enabled={isLoading} />
+        </div>
+      ) : (
+        <div className='notepadcard'>
+          {notesData}
+          {notesData.length <= 0 && <div>Please start taking notes...</div>}
+        </div>
+      )}
     </div>
   );
 };
