@@ -9,6 +9,7 @@ const Tbody = ({ Pques, updateProgress, renderNote }) => {
   const [ques, setQues] = useState(Pques);
   const [qId, setQId] = useState();
   const [note, setNote] = useState();
+  const [notesHeader, setNotesHeader] = useState();
   const [isPopupOpen, openPopup] = useState(false);
   const cookies = new Cookies();
   const token = cookies.get('token');
@@ -36,9 +37,10 @@ const Tbody = ({ Pques, updateProgress, renderNote }) => {
     });
   };
 
-  const openNotes = (qId, qNote) => {
+  const openNotes = (qId, qNote, qNoteHeader) => {
     setQId(qId);
     setNote(qNote);
+    setNotesHeader(qNoteHeader);
     openPopup(true);
   };
 
@@ -49,6 +51,7 @@ const Tbody = ({ Pques, updateProgress, renderNote }) => {
           key={qId}
           qId={qId}
           note={note}
+          notesHeader={notesHeader}
           popupToggle={openPopup}
           renderNote={renderNote}
         />
@@ -75,7 +78,7 @@ const Tbody = ({ Pques, updateProgress, renderNote }) => {
           height={18}
           alt='link'
           onClick={() => {
-            openNotes(ques.id, ques.notes);
+            openNotes(ques.id, ques.notes, ques.notes_header);
           }}
         />
       </div>
