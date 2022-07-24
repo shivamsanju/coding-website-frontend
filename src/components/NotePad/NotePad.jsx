@@ -29,8 +29,13 @@ const NotePad = () => {
     if (ques.notes) {
       notesData.push(
         <div key={ques.id}>
-          <h6 className='question-heading'>{ques.notes ? ques.name : ''}</h6>
-          <pre>{ques.notes}</pre>
+          <h6 className='question-title'>
+            {ques.id + 1}. {ques.notes ? ques.name : ''}
+          </h6>
+          <div className='question-content'>
+            <pre className='question-header'>{ques.notes_header}</pre>
+            <pre className='question-body'>{ques.notes}</pre>
+          </div>
         </div>
       );
     }

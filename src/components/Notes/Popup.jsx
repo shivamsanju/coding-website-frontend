@@ -8,11 +8,14 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
   const cookies = new Cookies();
   const token = cookies.get('token');
   const [notes, setNotes] = useState();
+  const [notesHeader, setNotesHeader] = useState();
   const [ide, toggleide] = useState(false);
 
   const notesHandler = (event) => {
-    console.log(event.target.value);
     setNotes(event.target.value);
+  };
+  const notesHeaderHandler = (event) => {
+    setNotesHeader(event.target.value);
   };
 
   const cancelHandler = () => {
@@ -24,6 +27,7 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
     popupToggle(false);
     const payload = {
       id: qId,
+      notesHeader: notesHeader,
       noteData: notes,
     };
     console.log(payload);
@@ -56,12 +60,20 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
             {notes}
           </iframe>
         ) : (
-          <textarea
-            onChange={notesHandler}
-            placeholder='Start writing notes here...'
-          >
-            {note}
-          </textarea>
+          <>
+            <textarea
+              onChange={notesHeaderHandler}
+              placeholder='Enter Question'
+            >
+              {note}
+            </textarea>
+            <textarea
+              onChange={notesHandler}
+              placeholder='Start writing notes here...'
+            >
+              {note}
+            </textarea>
+          </>
         )}
         <button type='submit'>Add</button>
         <button className='cancel' onClick={cancelHandler}>
