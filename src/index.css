@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
 }
 
 code {
@@ -17,5 +17,6 @@ html,
 body {
   overflow-x: hidden;
   max-width: 100%;
+  min-height: 100%;
   background-color: #f8f9fa;
 }

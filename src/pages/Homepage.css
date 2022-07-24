@@ -2,6 +2,7 @@
   background: #f8f9fa;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 .tabs {
@@ -29,7 +30,7 @@
   margin-bottom: -30px;
 }
 
-.active {
+/* .active {
   box-shadow: none;
   border: none;
   outline: none;
@@ -37,4 +38,4 @@
   background-color: rgb(49, 48, 48);
   font-size: 0.85em;
   font-weight: 700;
-}
+} */
