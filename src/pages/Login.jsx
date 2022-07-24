@@ -78,9 +78,9 @@ export default function Login({ login }) {
   return (
     <div className='container'>
       <h2 className='loginHeader'>LEETCODE PROBLEMS LOGIN</h2>
-      <div className='login-signup' onClick={signupToggler}>
+      {/* <div className='login-signup' onClick={signupToggler}>
         {signup ? 'Click here to Log In!' : 'Click here to Sign Up!'}
-      </div>
+      </div> */}
       {signup ? (
         <div className='Login'>
           <form onSubmit={handleSignUp}>

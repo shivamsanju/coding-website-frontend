@@ -29,7 +29,7 @@
   margin-bottom: -30px;
 }
 
-.tabs > button:focus {
+.active {
   box-shadow: none;
   border: none;
   outline: none;
