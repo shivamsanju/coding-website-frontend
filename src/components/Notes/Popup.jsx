@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Popup.css';
 import Cookies from 'universal-cookie';
 
-const Popup = ({ qId, note, popupToggle, renderNote }) => {
+const Popup = ({ qId, note, noteHeader, popupToggle, renderNote }) => {
   console.log(qId, note);
   const cookies = new Cookies();
   const token = cookies.get('token');
@@ -65,7 +65,7 @@ const Popup = ({ qId, note, popupToggle, renderNote }) => {
               onChange={notesHeaderHandler}
               placeholder='Enter Question'
             >
-              {note}
+              {noteHeader}
             </textarea>
             <textarea
               onChange={notesHandler}

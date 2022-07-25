@@ -51,7 +51,7 @@ const Tbody = ({ Pques, updateProgress, renderNote }) => {
           key={qId}
           qId={qId}
           note={note}
-          notesHeader={notesHeader}
+          noteHeader={notesHeader}
           popupToggle={openPopup}
           renderNote={renderNote}
         />
