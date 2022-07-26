@@ -30,12 +30,10 @@
   margin-bottom: -30px;
 }
 
-/* .active {
-  box-shadow: none;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: rgb(49, 48, 48);
-  font-size: 0.85em;
-  font-weight: 700;
-} */
+.tabs > button:hover {
+  background-color: #aaa;
+}
+
+.active {
+  background-color: #aaa;
+}

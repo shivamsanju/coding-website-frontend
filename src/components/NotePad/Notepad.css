@@ -12,6 +12,7 @@
   border: 0.5px solid rgb(176, 176, 176);
   border-radius: 10px;
   margin: 10px 0px;
+  background-color: white;
 }
 
 .question-title {

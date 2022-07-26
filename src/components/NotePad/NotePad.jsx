@@ -23,7 +23,7 @@ const NotePad = () => {
         }
         setLoading(false);
       });
-  }, []);
+  }, [token]);
 
   let notesData = [];
   for (const ques of data) {
@@ -52,7 +52,7 @@ const NotePad = () => {
   console.log(notesData);
 
   return (
-    <div className='con'>
+    <div className='cons'>
       {isLoading ? (
         <div className='spinner'>
           <SpinnerCircularFixed enabled={isLoading} />
