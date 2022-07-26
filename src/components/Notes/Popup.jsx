@@ -61,12 +61,12 @@ const Popup = ({ qId, note, noteHeader, popupToggle, renderNote }) => {
           </iframe>
         ) : (
           <>
-            <textarea
+            {/* <textarea
               onChange={notesHeaderHandler}
               placeholder='Enter Question'
             >
               {noteHeader}
-            </textarea>
+            </textarea> */}
             <textarea
               onChange={notesHandler}
               placeholder='Start writing notes here...'

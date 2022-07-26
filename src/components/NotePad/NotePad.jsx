@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import { SpinnerCircularFixed } from 'spinners-react';
 import './Notepad.css';
+import { marked } from 'marked';
 
 const NotePad = () => {
   const cookies = new Cookies();
@@ -33,8 +34,16 @@ const NotePad = () => {
             {ques.id + 1}. {ques.notes ? ques.name : ''}
           </h6>
           <div className='question-content'>
-            <pre className='question-header'>{ques.notes_header}</pre>
-            <pre className='question-body'>{ques.notes}</pre>
+            {/* <div
+              dangerouslySetInnerHTML={{
+                __html: marked(ques.notes_header),
+              }}
+            ></div> */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: marked(ques.notes),
+              }}
+            ></div>
           </div>
         </div>
       );

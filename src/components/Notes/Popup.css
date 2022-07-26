@@ -29,7 +29,7 @@
   width: 100%;
   height: 25%;
 }
-.popup-container > form > textarea:nth-child(2) {
+.popup-container > form > textarea:nth-child(1) {
   padding: 10px;
   color: #05316a;
   background-color: #f8f9fa;
@@ -39,7 +39,7 @@
   font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
   font-weight: 700;
   width: 100%;
-  height: 65%;
+  height: 90%;
 }
 
 .popup-container > form > button {
