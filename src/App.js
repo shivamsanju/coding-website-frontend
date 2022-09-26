@@ -12,7 +12,10 @@ import Link from './pages/Links';
 
 function App() {
   const cookies = new Cookies();
-  const token = cookies.get('token') || localStorage.getItem('token');
+  const token = cookies.get('token');
+  const token2 = localStorage.getItem('token');
+  console.log('Token: ', token);
+  console.log('Token2: ', token2);
   const [isLoggedIn, setLoggedIn] = useState(token);
 
   const HomeWrapper = ({ isLoggedIn }) => {
