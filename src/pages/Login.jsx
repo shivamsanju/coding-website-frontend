@@ -31,6 +31,7 @@ export default function Login({ login }) {
       .then((response) => response.json())
       .then((json) => {
         if (json.success === true) {
+          localStorage.setItem('token', JSON.stringify(json.token));
           login(json.token);
           navigate('/');
         } else {
